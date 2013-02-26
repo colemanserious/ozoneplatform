@@ -7,11 +7,11 @@ rvm:
   - 1.9.2
 before_install:
   - git submodule update --init --recursive &> /dev/null
-  - npm install -g testacular@v0.5.8
-  - gem install sass
-  - gem install compass
+  - npm install -g testacular@v0.5.8 &> /dev/null
+  - gem install sass &> /dev/null
+  - gem install compass &> /dev/null
 install: /bin/true
-script:  mvn install 2>&1 | cut -c -80
+script:  mvn install 2>&1 | grep -v -E "^Downloading\:.*$" | cut -c -80
 branches:
   only:
     - master
