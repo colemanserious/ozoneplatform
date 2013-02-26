@@ -1,4 +1,4 @@
-OzonePlatform Super Project [![Build Status](https://travis-ci.org/ntabernero/ozoneplatform.png?branch=master)](https://travis-ci.org/ntabernero/ozoneplatform)
+OzonePlatform Super Project [![Build Status](https://travis-ci.org/ozoneplatform/ozoneplatform.png)](https://travis-ci.org/ozoneplatform/ozoneplatform)
 ======================
 
 This is a super project for all ozoneplatform projects.  This project can be used to build all sub projects.
