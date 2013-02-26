@@ -19,8 +19,38 @@
         <slf4j.version>1.6.6</slf4j.version>
         <groovy.version>2.1.0</groovy.version>
         <jackson.version>2.1.2</jackson.version>
-
+        <spring.version>3.0.7.RELEASE</spring.version>
+        <spring.ldap.version>1.3.1.RELEASE</spring.ldap.version>
+        <com.springsource.javax.servlet.jsp.version>1.2.0.v20110728</com.springsource.javax.servlet.jsp.version>
+        <org.apache.servicemix.bundles.oscache.version>2.4.1_1</org.apache.servicemix.bundles.oscache.version>
+        <org.jasig.cas.client.version>3.1.8</org.jasig.cas.client.version>
+        <com.springsource.opensaml.version>1.1.0</com.springsource.opensaml.version>
         <httpcomponents.version>4.2.2</httpcomponents.version>
+        <com.springsource.javax.servlet.version>2.5.0</com.springsource.javax.servlet.version>
+        <log4j-version>1.2.16</log4j-version>
+        <org.springframework.osgi.version>1.2.1</org.springframework.osgi.version>
+
+        <!-- Ozone Config Properties -->
+        <ozone.host>localhost</ozone.host>
+        <ozone.unsecurePort>8181</ozone.unsecurePort>
+        <ozone.port>8443</ozone.port>
+
+        <!-- #CAS SETTINGS -->
+        <ozone.cas.serverName>cas</ozone.cas.serverName>
+        <ozone.cas.serverLoginLocation>cas/login</ozone.cas.serverLoginLocation>
+        <ozone.cas.serverLogoutLocation>cas/logout</ozone.cas.serverLogoutLocation>
+
+        <!-- #OWF CAS SETTINGS -->
+        <ozone.cas.owf.serverSecureReceptorLocation>owf/secure/receptor</ozone.cas.owf.serverSecureReceptorLocation>
+        <ozone.cas.owf.jSpringCasSecurityCheckLocation>owf/j_spring_cas_security_check</ozone.cas.owf.jSpringCasSecurityCheckLocation>
+
+        <!-- #MP CAS SETTINGS -->
+        <ozone.cas.marketplace.serverSecureReceptorLocation>marketplace/secure/receptor</ozone.cas.marketplace.serverSecureReceptorLocation>
+        <ozone.cas.marketplace.jSpringCasSecurityCheckLocation>marketplace/j_spring_cas_security_check</ozone.cas.marketplace.jSpringCasSecurityCheckLocation>
+
+        <!-- #METRIC CAS SETTINGS -->
+        <ozone.cas.metric.serverSecureReceptorLocation>metric/secure/receptor</ozone.cas.metric.serverSecureReceptorLocation>
+        <ozone.cas.metric.jSpringCasSecurityCheckLocation>metric/j_spring_cas_security_check</ozone.cas.metric.jSpringCasSecurityCheckLocation>
     </properties>
 
     <scm>
