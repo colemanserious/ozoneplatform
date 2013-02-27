@@ -12,6 +12,3 @@ before_install:
   - gem install compass &> /dev/null
 install: /bin/true
 script:  mvn install 2>&1 | grep -v -E "^Downloading\:.*$" | cut -c -80
-branches:
-  only:
-    - master
