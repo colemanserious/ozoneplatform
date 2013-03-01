@@ -35,6 +35,21 @@
         <ozone.unsecurePort>8181</ozone.unsecurePort>
         <ozone.port>8443</ozone.port>
 
+        <ozone.deploy.container.unsecurePort>8080</ozone.deploy.container.unsecurePort>
+        <ozone.deploy.container.port>9443</ozone.deploy.container.port>
+
+        <ozone.cas.port>${ozone.deploy.container.port}</ozone.cas.port>
+
+        <ozone.jmx.port>1099</ozone.jmx.port>
+        <ozone.activemq.port>61616</ozone.activemq.port>
+
+        <ozone.rmi.registry.port>${ozone.jmx.port}</ozone.rmi.registry.port>
+        <ozone.rmi.registry.host>0.0.0.0</ozone.rmi.registry.host>
+        <ozone.rmi.server.port>4444</ozone.rmi.server.port>
+
+        <ozone.ssh.port>8101</ozone.ssh.port>
+        <ozone.ssh.host>${ozone.host}</ozone.ssh.host>
+
         <!-- #CAS SETTINGS -->
         <ozone.cas.serverName>cas</ozone.cas.serverName>
         <ozone.cas.serverLoginLocation>cas/login</ozone.cas.serverLoginLocation>
