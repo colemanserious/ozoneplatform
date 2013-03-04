@@ -12,12 +12,18 @@
     <description>see README.md</description>
 
     <properties>
-    	<osgi.version>4.3.0</osgi.version>
+
+
+       <maven.build.timestamp.format>yyyy-MM-dd HH:mm</maven.build.timestamp.format>
+       <build.date>${maven.build.timestamp}</build.date>
+
+        <osgi.version>4.3.0</osgi.version>
     	<karaf.version>2.3.0.fuse-71-047</karaf.version>
     	<build.helper.plugin.version>1.5</build.helper.plugin.version>
         <cxf.version>2.6.0.fuse-71-047</cxf.version>
         <slf4j.version>1.6.6</slf4j.version>
         <groovy.version>2.1.0</groovy.version>
+        <gmaven.plugin.version>1.4</gmaven.plugin.version>
         <jackson.version>2.1.2</jackson.version>
         <spring.version>3.0.7.RELEASE</spring.version>
         <spring.ldap.version>1.3.1.RELEASE</spring.ldap.version>
@@ -29,6 +35,9 @@
         <com.springsource.javax.servlet.version>2.5.0</com.springsource.javax.servlet.version>
         <log4j-version>1.2.16</log4j-version>
         <org.springframework.osgi.version>1.2.1</org.springframework.osgi.version>
+
+        <maven.compiler.source>1.6</maven.compiler.source>
+        <maven.compiler.target>1.6</maven.compiler.target>
 
         <!-- Ozone Config Properties -->
         <ozone.host>localhost</ozone.host>
@@ -219,8 +228,8 @@
                 <version>3.0</version>
                 <configuration>
                     <!-- maven defaults to 1.3, at least on ubuntu -->
-                    <source>1.5</source>
-                    <target>1.5</target>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
                 </configuration>
             </plugin>
         </plugins>
