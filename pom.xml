@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 
@@ -14,12 +15,12 @@
     <properties>
 
 
-       <maven.build.timestamp.format>yyyy-MM-dd HH:mm</maven.build.timestamp.format>
-       <build.date>${maven.build.timestamp}</build.date>
+        <maven.build.timestamp.format>yyyy-MM-dd HH:mm</maven.build.timestamp.format>
+        <build.date>${maven.build.timestamp}</build.date>
 
         <osgi.version>4.3.0</osgi.version>
-    	<karaf.version>2.3.0.fuse-71-047</karaf.version>
-    	<build.helper.plugin.version>1.5</build.helper.plugin.version>
+        <karaf.version>2.3.0.fuse-71-047</karaf.version>
+        <build.helper.plugin.version>1.5</build.helper.plugin.version>
         <cxf.version>2.6.0.fuse-71-047</cxf.version>
         <slf4j.version>1.6.6</slf4j.version>
         <groovy.version>2.1.0</groovy.version>
@@ -69,15 +70,20 @@
 
         <!-- #OWF CAS SETTINGS -->
         <ozone.cas.owf.serverSecureReceptorLocation>owf/secure/receptor</ozone.cas.owf.serverSecureReceptorLocation>
-        <ozone.cas.owf.jSpringCasSecurityCheckLocation>owf/j_spring_cas_security_check</ozone.cas.owf.jSpringCasSecurityCheckLocation>
+        <ozone.cas.owf.jSpringCasSecurityCheckLocation>owf/j_spring_cas_security_check
+        </ozone.cas.owf.jSpringCasSecurityCheckLocation>
 
         <!-- #MP CAS SETTINGS -->
-        <ozone.cas.marketplace.serverSecureReceptorLocation>marketplace/secure/receptor</ozone.cas.marketplace.serverSecureReceptorLocation>
-        <ozone.cas.marketplace.jSpringCasSecurityCheckLocation>marketplace/j_spring_cas_security_check</ozone.cas.marketplace.jSpringCasSecurityCheckLocation>
+        <ozone.cas.marketplace.serverSecureReceptorLocation>marketplace/secure/receptor
+        </ozone.cas.marketplace.serverSecureReceptorLocation>
+        <ozone.cas.marketplace.jSpringCasSecurityCheckLocation>marketplace/j_spring_cas_security_check
+        </ozone.cas.marketplace.jSpringCasSecurityCheckLocation>
 
         <!-- #METRIC CAS SETTINGS -->
-        <ozone.cas.metric.serverSecureReceptorLocation>metric/secure/receptor</ozone.cas.metric.serverSecureReceptorLocation>
-        <ozone.cas.metric.jSpringCasSecurityCheckLocation>metric/j_spring_cas_security_check</ozone.cas.metric.jSpringCasSecurityCheckLocation>
+        <ozone.cas.metric.serverSecureReceptorLocation>metric/secure/receptor
+        </ozone.cas.metric.serverSecureReceptorLocation>
+        <ozone.cas.metric.jSpringCasSecurityCheckLocation>metric/j_spring_cas_security_check
+        </ozone.cas.metric.jSpringCasSecurityCheckLocation>
     </properties>
 
     <scm>
@@ -201,27 +207,106 @@
                     <version>2.3</version>
                 </plugin>
 
+                <!--<plugin>-->
+                <!--<groupId>org.ozoneplatform.commons.vendor</groupId>-->
+                <!--<artifactId>codenarc-maven-plugin</artifactId>-->
+                <!--<version>0.18-1-ozp-patch</version>-->
+                <!--<configuration>-->
+                <!--<codeNarcVersion>0.18</codeNarcVersion>-->
+                <!--<sourceDirectory>src/main/groovy</sourceDirectory>-->
+                <!--<groovyVersion>${groovy.version}</groovyVersion>-->
+                <!--<maxPriority1Violations>0</maxPriority1Violations>-->
+                <!--<maxPriority2Violations>0</maxPriority2Violations>-->
+                <!--<maxPriority3Violations>0</maxPriority3Violations>-->
+                <!--</configuration>-->
+                <!--<executions>-->
+                <!--<execution>-->
+                <!--<phase>test</phase>-->
+                <!--<goals>-->
+                <!--<goal>codenarc</goal>-->
+                <!--</goals>-->
+                <!--</execution>-->
+                <!--</executions>-->
+                <!--</plugin>-->
+
                 <plugin>
-                    <groupId>org.ozoneplatform.commons.vendor</groupId>
-                    <artifactId>codenarc-maven-plugin</artifactId>
-                    <version>0.18-1-ozp-patch</version>
-                    <configuration>
-                        <codeNarcVersion>0.18</codeNarcVersion>
-                        <sourceDirectory>src/main/groovy</sourceDirectory>
-                        <groovyVersion>${groovy.version}</groovyVersion>
-                        <maxPriority1Violations>0</maxPriority1Violations>
-                        <maxPriority2Violations>0</maxPriority2Violations>
-                        <maxPriority3Violations>0</maxPriority3Violations>
-                    </configuration>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-antrun-plugin</artifactId>
+                    <version>1.7</version>
                     <executions>
+                        <!--JsHint Plugin to use in a project, declare this plugin and bind to validate phase-->
                         <execution>
-                            <phase>test</phase>
+                            <id>jshint</id>
+                            <phase>none</phase>
                             <goals>
-                                <goal>codenarc</goal>
+                                <goal>run</goal>
                             </goals>
+                            <configuration>
+                                <target>
+                                    <taskdef name="jshint" classname="com.philmander.jshint.JsHintAntTask"
+                                             classpathref="maven.plugin.classpath"/>
+
+                                    <jshint dir="${project.basedir}/src/main/webapp/js"
+                                            options="strict=false, devel=true, expr=true, eqnull=true, eqeqeq=false"
+                                            globals="define:true, require:true">
+                                        <include name="**/*.js"/>
+                                        <exclude name="**/*.min.js"/>
+                                        <report type="jslint-xml"
+                                                destFile="${project.build.directory}/jslint-reports/jslint.xml"/>
+                                    </jshint>
+                                </target>
+                            </configuration>
+                        </execution>
+                        <!--CodeNarc to use in a project, declare this plugin and bind to validate phase-->
+                        <execution>
+                            <id>codenarc</id>
+                            <phase>none</phase>
+                            <goals>
+                                <goal>run</goal>
+                            </goals>
+                            <configuration>
+                                <target>
+                                    <taskdef name="codenarc" classname="org.codenarc.ant.CodeNarcTask" classpathref="maven.plugin.classpath"/>
+                                    <codenarc
+                                            ruleSetFiles="rulesets/basic.xml,rulesets/exceptions.xml,rulesets/imports.xml"
+                                            maxPriority1Violations="0"
+                                            maxPriority2Violations="0"
+                                            maxPriority3Violations="0"
+                                            >
+
+                                        <report type="xml">
+                                            <option name="outputFile" value="${project.build.directory}/CodeNarc.xml" />
+                                            <option name="title" value="${project.name}" />
+                                        </report>
+
+                                        <fileset dir="src/main/groovy">
+                                            <include name="**/*.groovy"/>
+                                        </fileset>
+                                    </codenarc>
+                                </target>
+                            </configuration>
                         </execution>
                     </executions>
+                    <dependencies>
+                        <dependency>
+                            <groupId>com.philmander.jshint</groupId>
+                            <artifactId>ant-jshint</artifactId>
+                            <version>0.3.3</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.codenarc</groupId>
+                            <artifactId>CodeNarc</artifactId>
+                            <version>0.18</version>
+                            <exclusions>
+                                <exclusion>
+                                    <groupId>ant</groupId>
+                                    <artifactId>ant</artifactId>
+                                </exclusion>
+                            </exclusions>
+                        </dependency>
+                    </dependencies>
                 </plugin>
+
             </plugins>
         </pluginManagement>
 
