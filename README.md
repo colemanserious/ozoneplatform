@@ -30,10 +30,10 @@ Initial Setup
 7. Install Ruby 1.9.2 or higher from http://www.ruby-lang.org/en/downloads/.
 
 8. Install required dependencies:
-       npm install -g phantomjs (NOTE: see step 9 below on Windows installation)
-       npm install -g testacular@v0.5.8
-       gem install sass (NOTE: verify the version is at least 3.2.5 or higher by executing sass -v)
-       gem install compass (NOTE: verify the version is at least 0.12.2 or higher by executing compass -v)
+       * npm install -g phantomjs (NOTE: see step 9 below on Windows installation)
+       * npm install -g testacular@v0.5.8
+       * gem install sass (NOTE: verify the version is at least 3.2.5 or higher by executing sass -v)
+       * gem install compass (NOTE: verify the version is at least 0.12.2 or higher by executing compass -v)
        
    Note: As of 1/18/2013, the latest stable version of testacular is 0.4.  To properly test AMD style javascript modules
    using requirejs, the project is using version 0.5.8.  The next stable build, 0.6 is expected soon at which time the
@@ -41,7 +41,8 @@ Initial Setup
 
 9. On Windows machines, add the PHANTOMJS_BIN environment variable to point to where PhantomJS was installed.
 		e.g.  PHANTOMJS_BIN=%APPDATA%\npm\node_modules\phantomjs\lib\phantom\phantomjs.exe (this is where npm will install it on Windows)
-		Note that the path to PhantomJS cannot have spaces in it.  If you are on Windows XP, Npm will insist on installing it in a path
+	
+	Note that the path to PhantomJS cannot have spaces in it.  If you are on Windows XP, Npm will insist on installing it in a path
 		with spaces, and you must manually download PhantomJS off the internet and install it yourself.
 
 Building
@@ -59,22 +60,25 @@ Running
 3. You must wait until the kernel has loaded.
 	The "Server startup in xxx ms" only indicates Tomcat has started.
 	The kernel is loaded when all console output stops.
-4. To view OWF, use URL http://localhost:8181/owf/index_debug.html
+4. To view OWF, use URL http://localhost:8181/owf/index.html
 5. To view the web console that manages the OSGI modules running in the kernel, use http://localhost:8181/system/console
 	and use login: "karaf", password: "karaf"
 	
 Note on Git and Submodules
 --------------------------
 Each ozoneplatform sub-project is kept as a Git sub-module.  To pull changes from git execute
- * `git pull`
- * `git submodule update`
 
- This mechanism for pulling submodules will pull the versions of the submodules associated with that version
- of the super-module, and the ozoneplatform super-module is only updated every alpha release.  If you want daily 
- updates to the sub-modules, you must explicitly break each sub-module from using the version associated with the 
- super-module.  You can do this using the commands
+  * `git pull`
+  * `git submodule update`
+
+This mechanism for pulling submodules will pull the versions of the submodules associated with that version
+of the super-module, and the ozoneplatform super-module is only updated every alpha release.  If you want daily 
+updates to the sub-modules, you must explicitly break each sub-module from using the version associated with the 
+super-module.  You can do this using the commands
+
   * `git submodule foreach git checkout master`
   
- Once you have done that, you can get the very latest changes with
+Once you have done that, you can get the very latest changes with
+
   * `git pull`
   * `git submodule foreach git pull`

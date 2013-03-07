@@ -31,6 +31,9 @@
         <org.apache.servicemix.bundles.oscache.version>2.4.1_1</org.apache.servicemix.bundles.oscache.version>
         <org.jasig.cas.client.version>3.1.8</org.jasig.cas.client.version>
         <com.springsource.opensaml.version>1.1.0</com.springsource.opensaml.version>
+        <spock.version>0.7-groovy-2.0</spock.version>
+        <junitVersion>4.8.1</junitVersion>
+
         <httpcomponents.version>4.2.2</httpcomponents.version>
         <com.springsource.javax.servlet.version>2.5.0</com.springsource.javax.servlet.version>
         <log4j-version>1.2.16</log4j-version>
@@ -212,6 +215,7 @@
                     </configuration>
                     <executions>
                         <execution>
+                            <phase>test</phase>
                             <goals>
                                 <goal>codenarc</goal>
                             </goals>
