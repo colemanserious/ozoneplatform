@@ -160,6 +160,7 @@
                     </configuration>
                     <executions>
                         <execution>
+                            <phase>test</phase>
                             <goals>
                                 <goal>codenarc</goal>
                             </goals>
