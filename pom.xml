@@ -125,19 +125,13 @@
             </releases>
         </repository>
 
+        <!-- repos below here are grabbed from kernel(fuse) main pom to fix build errors
+             todo reduce this list to minimal set needed -->
         <repository>
-            <id>spring-maven-release</id>
-            <name>springsource release Repository</name>
-            <url>http://repository.springsource.com/maven/bundles/release</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
+            <id>repo1.maven</id>
+            <name>Maven Central Repo</name>
+            <url>http://repo1.maven.org/maven2/</url>
         </repository>
-
-        <!--for now we need to add the fuse repos-->
         <repository>
             <id>fusesource.m2</id>
             <name>FuseSource Community Release Repository</name>
@@ -161,6 +155,31 @@
             </releases>
         </repository>
         <repository>
+            <id>fusesource-nexus-staging</id>
+            <name>FuseSource Release Proxy</name>
+            <url>http://repo.fusesource.com/nexus/content/groups/m2-release-proxy</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+        <repository>
+            <id>jboss-public-repository-group</id>
+            <name>JBoss Public Repository Group</name>
+            <url>http://repository.jboss.org/nexus/content/groups/public/</url>
+            <layout>default</layout>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>daily</updatePolicy>
+            </snapshots>
+        </repository>
+        <repository>
             <id>fusesource.m2-snapshot</id>
             <name>FuseSource Community Snapshot Repository</name>
             <url>http://repo.fusesource.com/nexus/content/repositories/snapshots</url>
@@ -182,6 +201,170 @@
                 <enabled>false</enabled>
             </releases>
         </repository>
+        <repository>
+            <id>apache.snapshots</id>
+            <name>Apache Development Snapshot Repository</name>
+            <url>https://repository.apache.org/content/repositories/snapshots</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+        <!-- bad repo
+        <repository>
+            <id>scala-tools.org-releases</id>
+            <url>http://scala-tools.org/repo-releases</url>
+            <releases><enabled>true</enabled></releases>
+            <snapshots><enabled>false</enabled></snapshots>
+        </repository>
+        <repository>
+            <id>scala-tools.org-snapshots</id>
+            <url>http://scala-tools.org/repo-snapshots</url>
+            <snapshots><enabled>true</enabled></snapshots>
+            <releases><enabled>false</enabled></releases>
+        </repository>
+        -->
+
+        <repository>
+          <id>java.net.m2</id>
+          <url>http://download.java.net/maven/2</url>
+          <releases><enabled>true</enabled></releases>
+          <snapshots><enabled>false</enabled></snapshots>
+        </repository>
+<!--
+        <repository>
+          <id>glassfish-repo-archive</id>
+          <url>http://maven.glassfish.org/content/groups/glassfish</url>
+          <releases><enabled>true</enabled></releases>
+          <snapshots><enabled>false</enabled></snapshots>
+        </repository>
+-->
+
+        <!-- for the bdb je dependency -->
+        <repository>
+          <id>oracleReleases</id>
+          <url>http://download.oracle.com/maven</url>
+          <layout>default</layout>
+        </repository>
+
+        <!-- for elasticsearch -->
+        <repository>
+            <id>oss.sonatype.releases</id>
+            <url>http://oss.sonatype.org/content/repositories/releases</url>
+            <layout>default</layout>
+        </repository>
+        <!-- FuseSource maven repositories -->
+        <repository>
+          <id>fusesource.releases</id>
+          <name>FuseSoure releases repository</name>
+          <url>http://repo.fusesource.com/maven2/</url>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+        </repository>
+        <repository>
+          <id>fusesource.snapshots</id>
+          <name>FuseSource Snapshot Repository</name>
+          <url>http://repo.fusesource.com/maven2-snapshot</url>
+          <snapshots>
+            <enabled>true</enabled>
+          </snapshots>
+          <releases>
+            <enabled>false</enabled>
+          </releases>
+        </repository>
+        <repository>
+          <id>ea.fusesource.org</id>
+          <name>FuseSource Early Access Repository</name>
+          <url>http://repo.fusesource.com/nexus/content/groups/ea</url>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+        </repository>
+        <!-- Java.net Maven Repository, required by javax.mail -->
+        <repository>
+            <id>java.net</id>
+            <name>Java.net Maven2 Repository</name>
+            <url>http://download.java.net/maven/2</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <!-- JBoss Maven Repository, required by Drools -->
+        <repository>
+            <id>jboss</id>
+            <name>JBoss Maven2 Repository</name>
+            <url>http://repository.jboss.com/nexus/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <!-- Scriptengines Google Maven Repository, required by scriptengines -->
+        <repository>
+            <id>scriptengines</id>
+            <name>Scriptengines Google Code Maven Repository</name>
+            <url>http://scriptengines.googlecode.com/svn/m2-repo</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <!-- ServiceMix Maven 2 repository: jsmpp 2.0 is not in central repo -->
+        <repository>
+            <id>servicemix.m2-repo</id>
+            <name>ServiceMix Maven 2 repository</name>
+            <url>http://svn.apache.org/repos/asf/servicemix/m2-repo</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>spring-maven-release</id>
+            <name>springsource release Repository</name>
+            <url>http://repository.springsource.com/maven/bundles/release</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+        <!-- SpringSource external bundles repository for JPA example bundles -->
+        <repository>
+            <id>spring-maven-external</id>
+            <name>springsource release Repository</name>
+            <url>http://repository.springsource.com/maven/bundles/external</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+         </repository>
+         <repository>
+            <id>maven-restlet</id>
+            <name>Public online Restlet repository</name>
+            <url>http://maven.restlet.org</url>
+         </repository>
     </repositories>
 
     <pluginRepositories>
