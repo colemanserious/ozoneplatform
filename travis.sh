@@ -1,6 +1,6 @@
 #!/bin/bash
 
-mvn install 2>&1 | grep -v -E "^Downloading\:.*$" | cut -c -80
+mvn install 2>&1 | grep -v -E "Downloading\:.*"
 
 if [ ${PIPESTATUS[0]} -ne "0" ];
 then
