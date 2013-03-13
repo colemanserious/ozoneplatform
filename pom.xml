@@ -126,6 +126,12 @@
             </releases>
         </repository>
 
+        <repository>
+            <id>gibson-edu-jasig</id>
+            <name>Gibson EDU Jasig Repo</name>
+            <url>https://gibson.asu.edu/nexus/content/repositories/jasig/</url>
+        </repository>
+
         <!-- repos below here are grabbed from kernel(fuse) main pom to fix build errors
              todo reduce this list to minimal set needed -->
         <repository>
