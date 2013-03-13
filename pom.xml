@@ -126,19 +126,13 @@
             </releases>
         </repository>
 
-        <repository>
-            <id>gibson-edu-jasig</id>
-            <name>Gibson EDU Jasig Repo</name>
-            <url>https://gibson.asu.edu/nexus/content/repositories/jasig/</url>
-        </repository>
-
         <!-- repos below here are grabbed from kernel(fuse) main pom to fix build errors
              todo reduce this list to minimal set needed -->
-        <repository>
-            <id>repo1.maven</id>
-            <name>Maven Central Repo</name>
-            <url>http://repo1.maven.org/maven2/</url>
-        </repository>
+        <!--<repository>-->
+            <!--<id>repo1.maven</id>-->
+            <!--<name>Maven Central Repo</name>-->
+            <!--<url>http://repo1.maven.org/maven2/</url>-->
+        <!--</repository>-->
         <repository>
             <id>fusesource.m2</id>
             <name>FuseSource Community Release Repository</name>
@@ -161,17 +155,18 @@
                 <enabled>true</enabled>
             </releases>
         </repository>
-        <repository>
-            <id>fusesource-nexus-staging</id>
-            <name>FuseSource Release Proxy</name>
-            <url>http://repo.fusesource.com/nexus/content/groups/m2-release-proxy</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-        </repository>
+        <!--this repo requires login, probably shouldn't be used outside of fuse-->
+        <!--<repository>-->
+            <!--<id>fusesource-nexus-staging</id>-->
+            <!--<name>FuseSource Release Proxy</name>-->
+            <!--<url>http://repo.fusesource.com/nexus/content/groups/m2-release-proxy</url>-->
+            <!--<snapshots>-->
+                <!--<enabled>false</enabled>-->
+            <!--</snapshots>-->
+            <!--<releases>-->
+                <!--<enabled>true</enabled>-->
+            <!--</releases>-->
+        <!--</repository>-->
         <repository>
             <id>jboss-public-repository-group</id>
             <name>JBoss Public Repository Group</name>
