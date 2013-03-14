@@ -60,8 +60,9 @@ Running
 3. You must wait until the kernel has loaded.
 	The "Server startup in xxx ms" only indicates Tomcat has started.
 	The kernel is loaded when all console output stops.
-4. To view OWF, use URL http://localhost:8181/owf/index.html
-5. To view the web console that manages the OSGI modules running in the kernel, use http://localhost:8181/system/console
+4. To view OWF, use URL http://localhost:8181/owf/index.html.
+5. Out of the box OWF has two users, "testUser1" and "testAdmin1", both with password "password".
+6. To view the web console that manages the OSGI modules running in the kernel, use http://localhost:8181/system/console
 	and use login: "karaf", password: "karaf"
 	
 Note on Git and Submodules
