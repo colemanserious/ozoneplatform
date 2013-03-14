@@ -30,7 +30,6 @@ Initial Setup
 7. Install Ruby 1.9.2 or higher from http://www.ruby-lang.org/en/downloads/.
 
 8. Install required dependencies:
-       * npm install -g phantomjs (NOTE: see step 9 below on Windows installation)
        * npm install -g testacular@v0.5.8
        * gem install sass (NOTE: verify the version is at least 3.2.5 or higher by executing sass -v)
        * gem install compass (NOTE: verify the version is at least 0.12.2 or higher by executing compass -v)
@@ -39,18 +38,13 @@ Initial Setup
    using requirejs, the project is using version 0.5.8.  The next stable build, 0.6 is expected soon at which time the
    project will migrate to that.
 
-9. On Windows machines, add the PHANTOMJS_BIN environment variable to point to where PhantomJS was installed.
-		e.g.  PHANTOMJS_BIN=%APPDATA%\npm\node_modules\phantomjs\lib\phantom\phantomjs.exe (this is where npm will install it on Windows)
-	
-	Note that the path to PhantomJS cannot have spaces in it.  If you are on Windows XP, Npm will insist on installing it in a path
-		with spaces, and you must manually download PhantomJS off the internet and install it yourself.
 
 Building
 --------
 1. Run `mvn clean install` from the root folder
-2. To skip client side tests, you can also run either `mvn clean install -DskipClientTests` or `mvn clean install -P !testacular`.
-3. To run integration tests enable the ci, continuous integration, profile `mvn clean install -P ci`.  By default integration tests are not run
-4. By default, tests are run against PhantomJS. If you like to run tests against other browsers, you can optionally pass them as maven properties.
+2. To run integration tests enable the ci, continuous integration, profile `mvn clean install -P ci`.  By default integration tests are not run
+3. To skip client side tests, you can also run either `mvn clean install -DskipClientTests` or `mvn clean install -P !testacular`.
+4. By default, tests are run against Firefox. If you like to run tests against other browsers, you can optionally pass them as maven properties.
        Example: `mvn clean install -Dbrowsers=Chrome,Safari`
 
 Running
