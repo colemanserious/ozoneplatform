@@ -44,7 +44,7 @@ Building
 1. Run `mvn clean install` from the root folder
 2. To run integration tests enable the ci, continuous integration, profile `mvn clean install -P ci`.  By default integration tests are not run
 3. To skip client side tests, you can also run either `mvn clean install -DskipClientTests` or `mvn clean install -P !testacular`.
-4. By default, tests are run against Firefox. If you like to run tests against other browsers, you can optionally pass them as maven properties.
+4. By default, tests are run against Firefox. If you have Firefox installed in a custom location, you can set `FIREFOX_BIN` environment varible and point it to Firefox executable. Optionally, if you like to run tests against other browsers, you can pass them as maven properties.
        Example: `mvn clean install -Dbrowsers=Chrome,Safari`
 
 Running
