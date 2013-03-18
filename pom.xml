@@ -533,4 +533,19 @@
         </snapshotRepository>
     </distributionManagement>
 
+    <profiles>
+        <profile>
+            <id>onlyDistro</id>
+            <activation>
+                <property>
+                    <name>onlyDistro</name>
+                </property>
+            </activation>
+            <modules>
+                <module>kernel</module>
+            </modules>
+        </profile>
+    </profiles>
+
+
 </project>
