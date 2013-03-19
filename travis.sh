@@ -1,6 +1,6 @@
 #!/bin/bash
 
-mvn install -Dci -DskipDistro 2>&1 | grep -v -E "Downloading\:.*" | cut -c -80
+mvn install -Dci 2>&1 | cut -c -80
 
 if [ ${PIPESTATUS[0]} -ne "0" ];
 then
