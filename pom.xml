@@ -69,6 +69,12 @@
         <ozone.cas.serverLoginLocation>cas/login</ozone.cas.serverLoginLocation>
         <ozone.cas.serverLogoutLocation>cas/logout</ozone.cas.serverLogoutLocation>
 
+        <!-- #OZP REST OWF CAS SETTINGS -->
+        <ozone.cas.ozp.rest.owf.serverSecureReceptorLocation>ozp/rest/secure/receptor
+        </ozone.cas.ozp.rest.owf.serverSecureReceptorLocation>
+        <ozone.cas.ozp.rest.owf.jSpringCasSecurityCheckLocation>ozp/rest/j_spring_cas_security_check
+        </ozone.cas.ozp.rest.owf.jSpringCasSecurityCheckLocation>
+
         <!-- #OWF CAS SETTINGS -->
         <ozone.cas.owf.serverSecureReceptorLocation>owf/secure/receptor</ozone.cas.owf.serverSecureReceptorLocation>
         <ozone.cas.owf.jSpringCasSecurityCheckLocation>owf/j_spring_cas_security_check
@@ -92,15 +98,6 @@
         <developerConnection>scm:git:https://github.com/ozoneplatform/ozoneplatform.git</developerConnection>
         <url>https://www.owfgoss.org/crucible/browse/ozoneplatform/</url>
     </scm>
-
-    <modules>
-        <module>commons</module>
-        <module>owf</module>
-        <module>marketplace</module>
-        <module>metrics</module>
-        <module>docs</module>
-        <module>kernel</module>
-    </modules>
 
     <repositories>
         <repository>
@@ -535,10 +532,35 @@
 
     <profiles>
         <profile>
+            <id>createDistro</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <modules>
+                <module>commons</module>
+                <module>owf</module>
+                <module>marketplace</module>
+                <module>metrics</module>
+                <module>docs</module>
+                <module>kernel</module>
+            </modules>
+        </profile>
+        <profile>
             <id>onlyDistro</id>
             <activation>
                 <property>
                     <name>onlyDistro</name>
+                </property>
+            </activation>
+            <modules>
+                <module>kernel</module>
+            </modules>
+        </profile>
+        <profile>
+            <id>onlyDistroFull</id>
+            <activation>
+                <property>
+                    <name>onlyDistro-full</name>
                 </property>
             </activation>
             <modules>
