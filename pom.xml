@@ -6,7 +6,7 @@
 
     <groupId>org.ozoneplatform</groupId>
     <artifactId>ozoneplatform</artifactId>
-    <version>8.0.0-ALPHA-SPRINT6-SNAPSHOT</version>
+    <version>8.0.0-ALPHA-SPRINT7</version>
     <packaging>pom</packaging>
 
     <name>OzonePlatform Super Project</name>
