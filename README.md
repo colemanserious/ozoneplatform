@@ -55,6 +55,10 @@ Running
 	The "Server startup in xxx ms" only indicates Tomcat has started.
 	The kernel is loaded when all console output stops.
 4. To view OWF, use URL http://localhost:8181/owf/index.html
+
+	**A glitch in our web security may throw error dialogs or silently fail to persist actions.  To avoid this, use X509 certificates to login or directly hit the following URL once logged in:**
+	https://localhost:8443/ozp/rest/owf/persons/me
+
 5. To view the web console that manages the OSGI modules running in the kernel, use http://localhost:8181/system/console
 	and use login: "karaf", password: "karaf"
 	
