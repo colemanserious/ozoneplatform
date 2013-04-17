@@ -28,6 +28,7 @@
         <gmaven.plugin.version>1.4</gmaven.plugin.version>
         <jackson.version>2.1.2</jackson.version>
         <spring.version>3.0.7.RELEASE</spring.version>
+        <spring.security.version>3.0.7.RELEASE</spring.security.version>
         <spring.ldap.version>1.3.1.RELEASE</spring.ldap.version>
         <com.springsource.javax.servlet.jsp.version>1.2.0.v20110728</com.springsource.javax.servlet.jsp.version>
         <org.apache.servicemix.bundles.oscache.version>2.4.1_1</org.apache.servicemix.bundles.oscache.version>
@@ -59,12 +60,13 @@
         <ozone.deploy.container.unsecurePort>8080</ozone.deploy.container.unsecurePort>
         <ozone.deploy.container.port>9443</ozone.deploy.container.port>
 
-        <ozone.cas.port>${ozone.deploy.container.port}</ozone.cas.port>
-
         <ozone.ssh.port>8101</ozone.ssh.port>
         <ozone.ssh.host>${ozone.host}</ozone.ssh.host>
 
         <!-- #CAS SETTINGS -->
+        <ozone.cas.port>${ozone.port}</ozone.cas.port>
+        <ozone.cas.host>${ozone.host}</ozone.cas.host>
+
         <ozone.cas.serverName>cas</ozone.cas.serverName>
         <ozone.cas.serverLoginLocation>cas/login</ozone.cas.serverLoginLocation>
         <ozone.cas.serverLogoutLocation>cas/logout</ozone.cas.serverLogoutLocation>
