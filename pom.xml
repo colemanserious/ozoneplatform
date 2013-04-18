@@ -366,6 +366,13 @@
             <name>Public online Restlet repository</name>
             <url>http://maven.restlet.org</url>
          </repository>
+
+        <repository>
+           <id>gibson-edu-jasig</id>
+           <name>Gibson EDU Jasig Repo</name>
+           <url>https://gibson.asu.edu/nexus/content/repositories/jasig/</url>
+        </repository>
+
     </repositories>
 
     <pluginRepositories>
