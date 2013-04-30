@@ -66,7 +66,7 @@
 
         <!-- #CAS SETTINGS -->
         <ozone.cas.port>${ozone.port}</ozone.cas.port>
-        <ozone.cas.host>${ozone.host}</ozone.cas.host>
+        <ozone.cas.host>${ozone.deploy.container.port}</ozone.cas.host>
 
         <ozone.cas.serverName>cas</ozone.cas.serverName>
         <ozone.cas.serverLoginLocation>cas/login</ozone.cas.serverLoginLocation>
